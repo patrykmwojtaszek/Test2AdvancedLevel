@@ -16,9 +16,6 @@ public class EquationService implements IEquationService {
 
     private IEquationEventService equationEventService;
 
-//    public EquationService() {
-//    }
-
     public EquationService(IEquationEventService equationEventService) {
         this.equationEventService = equationEventService;
     }
@@ -28,7 +25,6 @@ public class EquationService implements IEquationService {
         validEquationString(equation);
 
         List<String> equationElementsList = new LinkedList<>(Arrays.asList(equation.split(" ")));
-        System.out.println(equationElementsList);
 
         for (int i = 0; i < equationElementsList.size(); i++) {
             if (i % 2 != 0) {
@@ -48,8 +44,6 @@ public class EquationService implements IEquationService {
             }
         }
 
-//        System.out.println("lista po mnozeniu / dzieleniu " + equationElementsList);
-
         for (int i = 0; i < equationElementsList.size()-1; i++) {
             if (i % 2 != 0) {
                 switch (equationElementsList.get(i)) {
@@ -66,12 +60,9 @@ public class EquationService implements IEquationService {
             }
         }
 
-//        System.out.println("lista po dodawaniu / odejmowaniu " + equationElementsList);
-
         double equationResult = Double.parseDouble(equationElementsList.get(equationElementsList.size() - 1));
 
         equationEventService.saveEvent(new EquationEvent(Timestamp.from(Instant.now()), equation, equationResult));
-        System.out.println(equationEventService.loadEvent(1L));
 
         return equationResult;
     }

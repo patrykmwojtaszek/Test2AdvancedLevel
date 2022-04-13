@@ -24,19 +24,10 @@ public class Main {
 
 
         try {
-
             System.out.println("Passed equation: " + args[0]);
-
 
             AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
             IEquationService equationService = ctx.getBean(IEquationService.class);
-
-//        System.out.println("Welcome in EquationSolverApp! Enter the equation, please: ");
-//        Scanner scanner = new Scanner(System.in);
-//        String equation = scanner.nextLine();
-
-//        validEquationString(equation);
-
 
             System.out.println("The result = " + equationService.solveEquation(args[0]));
 
@@ -46,26 +37,11 @@ public class Main {
             System.err.println(e.getMessage());
         }
 
-
-//        double resultEval = eval(equation);
+           // SPOSÓB NR 2 NA ROZWIAZANIE ROWNANIA - ZNALEZIONE W INTERNECIE
+//        double resultEval = eval(args[0]);
 //        System.out.println("wynik string to java code " + resultEval);
-
-
-        // ZNALEZIONE W INTERNECIE - NIE DZIAŁA W TEJ WERSJI JAVA
-//        ScriptEngine engine = new ScriptEngineManager().getEngineByExtension("js");
-//        try {
-//            String result2 = engine.eval(equation).toString();
-//            System.out.println(result2);
-//        } catch (ScriptException e) {
-//            e.printStackTrace();
-//        }
-
-
-        // scanner.close();
     }
 
-
-    // ZNALEZIONE W INTERNECIE
 //    public static double eval(final String str) {
 //        return new Object() {
 //            int pos = -1, ch;

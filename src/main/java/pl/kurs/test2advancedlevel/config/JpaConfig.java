@@ -42,7 +42,6 @@ public class JpaConfig {
         properties.put("javax.persistence.jdbc.user", "sa");
         properties.put("javax.persistence.jdbc.password", "password");
         properties.put("javax.persistence.jdbc.driver", "org.h2.Driver");
-//        properties.put("javax.persistence.schema-generation.database.action", "create");
         properties.put("javax.persistence.schema-generation.database.action", "drop-and-create");
         emf.setJpaPropertyMap(properties);
         emf.setPackagesToScan("pl.kurs.test2advancedlevel.model");

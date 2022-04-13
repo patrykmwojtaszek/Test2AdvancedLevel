@@ -15,31 +15,31 @@ import javax.persistence.EntityManagerFactory;
 
 public class EquationServiceTest {
 
-////    @Mock private EntityManagerFactory factory;
-////    @Mock private EquationEventDao equationEventDao;
-//    @Mock private EquationEventService equationEventService;
-//    private EquationService equationService;
-//    private String equation;
-//
-//
-//
-//    @Before
-//    public void init() {
-//        MockitoAnnotations.openMocks(this);
-////        equationEventDao = new EquationEventDao(factory);
-////        equationEventService = new EquationEventService(equationEventDao);
-//        equationService = new EquationService(equationEventService);
-//        equation = "2 + 2 * 2";
-//    }
-//
-//    @Test
-//    public void shouldReturn6forSolveEquation() throws InvalidEquationFormatException, UnknownOperatorException {
-//        //given
-//        String testEquation = equation;
-//        //when
-//        double result = equationService.solveEquation(testEquation);
-//        //then
-//        Assert.assertEquals(result, 6, 0);
-//    }
+//    @Mock private EntityManagerFactory factory;
+//    @Mock private EquationEventDao equationEventDao;
+    @Mock private EquationEventService equationEventService;
+    private EquationService equationService;
+    private String equation;
+
+
+
+    @Before
+    public void init() {
+        MockitoAnnotations.openMocks(this);
+//        equationEventDao = new EquationEventDao(factory);
+//        equationEventService = new EquationEventService(equationEventDao);
+        equationService = new EquationService(equationEventService);
+        equation = "2 + 2 * 2";
+    }
+
+    @Test
+    public void shouldReturn6forSolveEquation() throws InvalidEquationFormatException, UnknownOperatorException {
+        //given
+        String testEquation = equation;
+        //when
+        double result = equationService.solveEquation(testEquation);
+        //then
+        Assert.assertEquals(result, 6, 0);
+    }
 
 }
