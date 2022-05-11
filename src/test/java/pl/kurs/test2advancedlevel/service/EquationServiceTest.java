@@ -18,8 +18,6 @@ import static org.junit.Assert.assertThrows;
 
 public class EquationServiceTest {
 
-//    @Mock private EntityManagerFactory factory;
-//    @Mock private EquationEventDao equationEventDao;
     @Mock private EquationEventService equationEventServiceMock;
     private EquationService equationService;
     private String equation;
@@ -31,7 +29,6 @@ public class EquationServiceTest {
     public void init() {
 
         MockitoAnnotations.openMocks(this);
-//        equationEventDao = new EquationEventDao(factory);
         equationService = new EquationService(equationEventServiceMock, new Addition(), new Division(), new Multiplication(), new Subtraction());
         equation = "3 + 2 * 2 - 4 / 2";
     }
